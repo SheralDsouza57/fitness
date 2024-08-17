@@ -1,4 +1,3 @@
 class AppFonts {
-  static const dmSans = 'DMSans';
-  static const inter = 'Inter';
+  static const poppins = 'Poppins';
 }
