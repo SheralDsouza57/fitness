@@ -1,3 +1,4 @@
+import 'package:fitness/presentation/screens/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Center(
-          child: Text('Dummy'),
+          child: Home(),
         ),
       ),
     );
