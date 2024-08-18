@@ -1,3 +1,4 @@
+import 'package:fitness/presentation/widgets/image_widget.dart';
 import 'package:fitness/presentation/widgets/text_widget.dart';
 import 'package:fitness/resources/app_colors.dart';
 import 'package:fitness/resources/app_icons.dart';
@@ -23,10 +24,10 @@ class AssessmentCard extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.asset(
+          ImageWidget(
+            image: AppImages.assessment1,
             width: 113.w,
             height: 116.h,
-            AppImages.assessment1,
             fit: BoxFit.fill,
           ),
           Padding(
@@ -34,34 +35,30 @@ class AssessmentCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
+                TextWidget(
                   width: 130.w,
-                  child: TextWidget(
-                    text: 'Fitness Assessment',
-                    fontweight: FontWeight.w600,
-                    fontsize: 11.h,
-                    maxlines: 5,
-                    color: AppColors.navyBlue,
-                  ),
+                  text: 'Fitness Assessment',
+                  fontweight: FontWeight.w600,
+                  fontsize: 10.h,
+                  maxlines: 2,
+                  color: AppColors.navyBlue,
                 ),
-                SizedBox(
+                TextWidget(
                   width: 130.w,
-                  child: TextWidget(
-                    text:
-                        'Get Started On Your Fitness Goals With Our Physical Assessment And Vital Scan',
-                    fontweight: FontWeight.w500,
-                    fontsize: 8.h,
-                    maxlines: 5,
-                    color: AppColors.coalBlack,
-                  ),
+                  text:
+                      'Get Started On Your Fitness Goals With Our Physical Assessment And Vital Scan ',
+                  fontweight: FontWeight.w500,
+                  fontsize: 8.h,
+                  maxlines: 3,
+                  color: AppColors.coalBlack,
                 ),
                 SizedBox(height: 3.h),
                 Row(
                   children: [
-                    Image.asset(
-                      AppIcons.play,
-                      width: 20.w,
-                      height: 20.h,
+                    ImageWidget(
+                      image: AppIcons.play,
+                      width: 19.w,
+                      height: 19.h,
                     ),
                     SizedBox(width: 10.w),
                     TextWidget(

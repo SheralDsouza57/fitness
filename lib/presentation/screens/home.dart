@@ -1,12 +1,16 @@
+import 'package:fitness/presentation/screens/appointment_view.dart';
 import 'package:fitness/presentation/widgets/assessment_card.dart';
 import 'package:fitness/presentation/screens/assessment_view.dart';
 import 'package:fitness/presentation/widgets/bounce_effect.dart';
+import 'package:fitness/presentation/widgets/challenges_card.dart';
 import 'package:fitness/presentation/widgets/custom_tab.dart';
+import 'package:fitness/presentation/widgets/heading.dart';
+import 'package:fitness/presentation/widgets/image_widget.dart';
+import 'package:fitness/presentation/widgets/routine_card.dart';
 import 'package:fitness/presentation/widgets/text_widget.dart';
 import 'package:fitness/resources/app_colors.dart';
 import 'package:fitness/resources/app_icons.dart';
 import 'package:fitness/resources/app_images.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -21,36 +25,45 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   TabController? _tabController;
 
+  final int completedTasks = 10;
+  final int totalTasks = 20;
+
   @override
   void initState() {
     super.initState();
     _tabController = TabController(length: 2, vsync: this);
+    _tabController?.addListener(() {
+      setState(() {});
+    });
   }
 
   @override
   Widget build(BuildContext context) {
+    double progress = completedTasks / totalTasks;
+
     return Scaffold(
-        appBar: AppBar(
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Padding(
-                padding: EdgeInsets.only(left: 20.w),
-                child: TextWidget(
-                  text: 'Hello Jane',
-                  fontweight: FontWeight.w600,
-                  color: AppColors.blue,
-                  fontsize: 24.h,
-                ),
+      appBar: AppBar(
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Padding(
+              padding: EdgeInsets.only(left: 20.w),
+              child: TextWidget(
+                text: 'Hello Jane',
+                fontweight: FontWeight.w600,
+                color: AppColors.blue,
+                fontsize: 20.h,
               ),
-              BounceEffect(
-                onTap: () {},
-                child: Image.asset(AppIcons.account),
-              )
-            ],
-          ),
+            ),
+            BounceEffect(
+              onTap: () {},
+              child: Image.asset(AppIcons.account),
+            )
+          ],
         ),
-        body: Container(
+      ),
+      body: SingleChildScrollView(
+        child: Container(
           padding: EdgeInsets.symmetric(horizontal: 18.w),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -92,42 +105,39 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                   controller: _tabController,
                   children: const [
                     AssessmentView(),
-                    Center(
-                      child: Text('Content for Tab 2'),
-                    ),
+                    AppointmentView(),
                   ],
                 ),
               ),
               SizedBox(height: 18.h),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  TextWidget(
-                    text: 'Challenges',
-                    fontsize: 14.h,
-                    fontweight: FontWeight.w500,
-                    color: AppColors.darkCharcoal,
-                  ),
-                  Row(
-                    children: [
-                      TextWidget(
-                        text: 'View All',
-                        fontsize: 12.h,
-                        fontweight: FontWeight.w500,
-                        color: AppColors.darkCharcoal,
-                        underline: TextDecoration.underline,
-                      ),
-                      SizedBox(width: 10.w),
-                      Image.asset(
-                        AppIcons.forwardArrow,
-                        height: 22.h,
-                      )
-                    ],
-                  ),
-                ],
-              )
+              const Heading(
+                heading: 'Challenges',
+                sideHeading: 'View All',
+              ),
+              SizedBox(height: 6.h),
+              ChallengesCard(
+                  progress: progress,
+                  completedTasks: completedTasks,
+                  totalTasks: totalTasks),
+              SizedBox(height: 11.h),
+              const Heading(
+                  heading: 'Workout Routines', sideHeading: 'View All'),
+              SizedBox(height: 11.h),
+              SizedBox(
+                height: 87.h,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 3,
+                  itemBuilder: (context, index) {
+                    return const RoutineCard();
+                  },
+                ),
+              ),
+              SizedBox(height: 20.h),
             ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }

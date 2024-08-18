@@ -10,7 +10,10 @@ class TextWidget extends StatelessWidget {
       required this.text,
       this.underline,
       this.textAlign,
-      this.maxlines});
+      this.maxlines,
+      this.width,
+      this.height,
+      this.padding});
 
   final Color? color;
   final double? fontsize;
@@ -19,21 +22,29 @@ class TextWidget extends StatelessWidget {
   final TextDecoration? underline;
   final TextAlign? textAlign;
   final int? maxlines;
+  final double? width;
+  final double? height;
+  final EdgeInsetsGeometry? padding;
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      text,
-      textAlign: textAlign,
-      maxLines: maxlines,
-      softWrap: true,
-      style: TextStyle(
-        overflow: TextOverflow.ellipsis,
-        color: color,
-        fontFamily: AppFonts.poppins,
-        fontSize: fontsize,
-        fontWeight: fontweight,
-        decoration: underline,
+    return Container(
+      padding: padding,
+      width: width,
+      height: height,
+      child: Text(
+        text,
+        textAlign: textAlign,
+        maxLines: maxlines,
+        softWrap: true,
+        style: TextStyle(
+          overflow: TextOverflow.ellipsis,
+          color: color,
+          fontFamily: AppFonts.poppins,
+          fontSize: fontsize,
+          fontWeight: fontweight,
+          decoration: underline,
+        ),
       ),
     );
   }
