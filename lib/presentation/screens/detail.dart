@@ -15,7 +15,7 @@ class Detail extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: SizedBox(
-          height: MediaQuery.of(context).size.height.h,
+          height: MediaQuery.of(context).size.height + 243.h,
           child: Stack(
             children: [
               Positioned(
@@ -117,7 +117,7 @@ class Detail extends StatelessWidget {
                           ),
                           Container(
                             padding: EdgeInsets.symmetric(horizontal: 8.w),
-                            height: 280.h,
+                            height: 330.h,
                             width: double.infinity,
                             decoration: BoxDecoration(
                               color: AppColors.offWhite,
@@ -143,6 +143,7 @@ class Detail extends StatelessWidget {
                                       TextWidget(
                                         text:
                                             'We do not store or share your personal data',
+                                        maxlines: 1,
                                         fontsize: 8.h,
                                         color: AppColors.greyNormal,
                                       )
@@ -153,9 +154,9 @@ class Detail extends StatelessWidget {
                                 TextWidget(
                                     padding:
                                         EdgeInsets.symmetric(horizontal: 10.w),
-                                    maxlines: 7,
+                                    maxlines: 10,
                                     text:
-                                        '1. Ensure that you are in a well-lit space 2. Allow camera access and place your device against a stable object or wall 3. Avoiding wearing baggy clothes 4. Make sure you exercise as per the instruction provided by the trainer 5. Watch the short preview before each exercise')
+                                        '1. Ensure that you are in a well-lit space\n2. Allow camera access and place your device against a stable object or wall\n3. Avoiding wearing baggy clothes\n4. Make sure you exercise as per the instruction provided by the trainer\n5. Watch the short preview before each exercise')
                               ],
                             ),
                           ),
