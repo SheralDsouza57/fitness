@@ -1,16 +1,6 @@
 # fitness
 
-A new Flutter project.
+UI with Static Data
 
-## Getting Started
+https://github.com/user-attachments/assets/9c2f9113-03fd-452b-841e-20e2557d0663
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
