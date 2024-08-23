@@ -107,15 +107,56 @@ class Detail extends StatelessWidget {
                         clipBehavior: Clip.none,
                         children: [
                           Positioned(
-                              top: -80.h,
-                              left: 100.w,
-                              child: ImageWidget(image: AppImages.ring1)),
+                            top: -80.h,
+                            left: 115.w,
+                            child: ImageWidget(
+                              image: AppImages.ring1,
+                              width: 130.w,
+                              height: 130.h,
+                            ),
+                          ),
                           Container(
-                            height: 200.h,
+                            padding: EdgeInsets.symmetric(horizontal: 8.w),
+                            height: 280.h,
+                            width: double.infinity,
                             decoration: BoxDecoration(
                               color: AppColors.offWhite,
                               borderRadius: BorderRadius.circular(15.r),
                               border: Border.all(color: AppColors.lightGrey),
+                            ),
+                            child: Column(
+                              children: [
+                                SizedBox(height: 120.h),
+                                Container(
+                                  padding:
+                                      EdgeInsets.symmetric(horizontal: 15.w),
+                                  height: 31.h,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10.r),
+                                    color: AppColors.babyGreen,
+                                  ),
+                                  child: Row(
+                                    children: [
+                                      const ImageWidget(
+                                          image: AppIcons.privacy),
+                                      SizedBox(width: 7.h),
+                                      TextWidget(
+                                        text:
+                                            'We do not store or share your personal data',
+                                        fontsize: 8.h,
+                                        color: AppColors.greyNormal,
+                                      )
+                                    ],
+                                  ),
+                                ),
+                                SizedBox(height: 12.h),
+                                TextWidget(
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 10.w),
+                                    maxlines: 7,
+                                    text:
+                                        '1. Ensure that you are in a well-lit space 2. Allow camera access and place your device against a stable object or wall 3. Avoiding wearing baggy clothes 4. Make sure you exercise as per the instruction provided by the trainer 5. Watch the short preview before each exercise')
+                              ],
                             ),
                           ),
                           Positioned(
