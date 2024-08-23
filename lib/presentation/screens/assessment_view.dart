@@ -1,5 +1,7 @@
+import 'package:fitness/presentation/screens/detail.dart';
 import 'package:fitness/presentation/widgets/assessment_card.dart';
 import 'package:fitness/presentation/widgets/bounce_effect.dart';
+import 'package:fitness/presentation/widgets/start_row.dart';
 import 'package:fitness/presentation/widgets/text_widget.dart';
 import 'package:fitness/resources/app_colors.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +27,16 @@ class AssessmentView extends StatelessWidget {
             scrollDirection: Axis.vertical,
             itemCount: 2,
             itemBuilder: (context, index) {
-              return const AssessmentCard();
+              return AssessmentCard(
+                play: BounceEffect(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const Detail()),
+                      );
+                    },
+                    child: StartRow()),
+              );
             },
           ),
         ),
