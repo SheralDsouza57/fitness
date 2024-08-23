@@ -5,7 +5,6 @@ import 'package:fitness/presentation/widgets/start_row.dart';
 import 'package:fitness/presentation/widgets/text_widget.dart';
 import 'package:fitness/resources/app_colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AssessmentView extends StatelessWidget {
@@ -35,7 +34,7 @@ class AssessmentView extends StatelessWidget {
                         MaterialPageRoute(builder: (context) => const Detail()),
                       );
                     },
-                    child: StartRow()),
+                    child: const StartRow()),
               );
             },
           ),

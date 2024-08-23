@@ -1,3 +1,4 @@
+import 'package:fitness/presentation/widgets/bounce_effect.dart';
 import 'package:fitness/presentation/widgets/detail_icons.dart';
 import 'package:fitness/presentation/widgets/image_widget.dart';
 import 'package:fitness/presentation/widgets/text_widget.dart';
@@ -35,7 +36,11 @@ class Detail extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Icon(Icons.arrow_back),
+                    BounceEffect(
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                        child: const Icon(Icons.arrow_back)),
                     SizedBox(height: 40.h),
                     TextWidget(
                       width: 180.w,
