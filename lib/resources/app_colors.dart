@@ -14,4 +14,5 @@ class AppColors {
   static const oliveGreen = Color(0xFF2B7A71);
   static const babyGreen = Color(0xFFC1EAD1);
   static const babyPink = Color(0xFFFF88A5);
+  static const offWhite = Color(0xFFFAFCFF);
 }

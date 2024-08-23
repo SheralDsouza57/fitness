@@ -68,13 +68,15 @@ flutter:
     - assets/icons/play_minimized.png
     - assets/icons/privacy.png
     - assets/icons/timer.png
+    - assets/icons/detail_icon.png
     - assets/images/assessment1.png
     - assets/images/assessment2.png 
     - assets/images/challenges.png
-    - assets/images/no_bg1.png
-    - assets/images/no_bg2.png
     - assets/images/routine1.png
     - assets/images/appointment1.png
+    - assets/images/assessment2_enlarged.png
+    - assets/images/ring1.png
+    - assets/images/man.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

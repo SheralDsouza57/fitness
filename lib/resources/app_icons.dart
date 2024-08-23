@@ -6,4 +6,5 @@ class AppIcons {
   static const play = "${_prefix}play.png";
   static const privacy = "${_prefix}privacy.png";
   static const timer = "${_prefix}timer.png";
+  static const detailIcon = "${_prefix}detail_icon.png";
 }
